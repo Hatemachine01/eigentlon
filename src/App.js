@@ -1,9 +1,22 @@
 import "./App.css";
 
-import logo from "./logo.svg";
+import React, { useEffect, useState } from "react";
 
 function App() {
-  return <div className="App">Eigentlon</div>;
+  const [time, setTime] = useState(null);
+
+  useEffect(() => {
+    fetch("/time")
+      .then((response) => response.json())
+      .then((data) => setTime(data.time));
+  }, []);
+
+  return (
+    <div className="App">
+      Eigentlon
+      <span>The current time is {time}</span>
+    </div>
+  );
 }
 
 export default App;
