@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       Eigentlon
-      <span>The current time is {time}</span>
+      <div>The current time is {time}</div>
     </div>
   );
 }
