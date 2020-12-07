@@ -4,10 +4,10 @@ const port = 5000;
 
 app.get("/time", (req, res) => {
   res.json({
-    time: Date.now(),
+    time: new Date().toUTCString(),
   });
 });
 
 app.listen(port, () => {
-  console.log(`Server at http://localhost:${port}`);
+  console.log(`Server running on http://localhost:${port}`);
 });
