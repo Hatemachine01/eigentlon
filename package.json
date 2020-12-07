@@ -7,7 +7,11 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+<<<<<<< HEAD
     "bootstrap": "^4.5.3",
+=======
+    "express": "^4.17.1",
+>>>>>>> 50a5c2167e6e701800e2946f5e89b308713f9c64
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
@@ -15,6 +19,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "server": "nodemon api/index.js",
+    "client": "npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -38,5 +45,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
 }
