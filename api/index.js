@@ -8,6 +8,14 @@ app.get("/time", (req, res) => {
   });
 });
 
+app.get("/user", (req, res) => {
+  res.json({
+    id: "1",
+    email: "Jules@gmail.com",
+    password: "1234",
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
