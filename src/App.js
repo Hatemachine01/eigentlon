@@ -1,37 +1,36 @@
 import "./App.css";
-
 import React, { useEffect, useState } from "react";
-
-import { Button } from "@material-ui/core";
-import Login from "./containers/Login";
 import { Route } from "react-router-dom";
-import Switch from "react-bootstrap/esm/Switch";
+import Navbar from "react-bootstrap/Navbar";
+import { LinkContainer } from "react-router-bootstrap";
+import Nav from "react-bootstrap/Nav";
+import Routes from "./Routes";
+
 
 function App() {
-  const [time, setTime] = useState(null);
-
-  useEffect(() => {
-    fetch("/time")
-      .then((response) => response.json())
-      .then((data) => setTime(data.time));
-  }, []);
-
   return (
     <div className="App">
-      <h1> Eigentlon </h1>
-      {/* <Button color="primary" variant="contained">
-        Login
-      </Button> */}
-      <Switch>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/signup">
-          <div>Sign Up</div>
-        </Route>
-      </Switch>
-
-      <div>The current time is {time}</div>
+      <div className="App container py-3">
+        <Navbar collapseOnSelect bg="light" expand="md" className="mb-3">
+          <LinkContainer to="/">
+            <Navbar.Brand className="font-weight-bold text-muted">
+            Eigentlon
+            </Navbar.Brand>
+          </LinkContainer>
+          <Navbar.Toggle />
+          <Navbar.Collapse className="justify-content-end">
+            <Nav activeKey={window.location.pathname}>
+              <LinkContainer to="/signup">
+                <Nav.Link>Signup</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/login">
+                <Nav.Link>Login</Nav.Link>
+              </LinkContainer>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+        <Routes />
+      </div>
     </div>
   );
 }
