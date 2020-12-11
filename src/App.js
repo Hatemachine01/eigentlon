@@ -1,5 +1,4 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import { LinkContainer } from "react-router-bootstrap";
@@ -20,7 +19,7 @@ function App() {
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Nav activeKey={window.location.pathname}>
-              <LinkContainer to="/signup">
+              <LinkContainer to="/Registration">
                 <Nav.Link>Signup</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/login">
