@@ -1,5 +1,4 @@
 import "./App.css";
-import { Route } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import { LinkContainer } from "react-router-bootstrap";
 import Nav from "react-bootstrap/Nav";
