@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./containers/Home";
 import Login from "./containers/Login";
+import Registration from "./containers/Registration";
 import NotFound from "./containers/NotFound";
 
 export default function Routes() {
@@ -13,6 +14,11 @@ export default function Routes() {
       
       <Route exact path="/login">
         <Login />
+      </Route>
+
+
+      <Route exact path="/Registration">
+        <Registration />
       </Route>
      
       <Route>
