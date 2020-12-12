@@ -13,6 +13,7 @@ app.get("/user", (req, res) => {
     id: "1",
     email: "Jules@gmail.com",
     password: "1234",
+    portfolio: [{ ticker: "APPL", quantity: 2, averagePrice: 108.92 }],
   });
 });
 
