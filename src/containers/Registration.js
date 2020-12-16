@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import "./Registration.css";
 
+import React, { useState } from "react";
+
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+
 export default function Registration() {
-  const [name, setName] = useState("");  
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,8 +21,7 @@ export default function Registration() {
   return (
     <div className="registration">
       <Form onSubmit={handleSubmit}>
-        
-      <Form.Group size="lg" controlId="email">
+        <Form.Group size="lg" controlId="email">
           <Form.Label>Name</Form.Label>
           <Form.Control
             autoFocus
@@ -30,9 +31,6 @@ export default function Registration() {
           />
         </Form.Group>
 
-        
-        
-        
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -42,7 +40,7 @@ export default function Registration() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
-       
+
         <Form.Group size="lg" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
@@ -50,7 +48,6 @@ export default function Registration() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        
         </Form.Group>
         <Button block size="lg" type="submit" disabled={!validateForm()}>
           Sign up
